@@ -22,14 +22,21 @@ double dziel(double a, double b) {
         return 0;
     }
 }
+double potega(double a, int b){
+    double wynik = a;
+    for (int i = 0; i < b - 1; ++i) {
+        wynik = wynik * a;
+        //printf("a = %f\n", a);
+    }
+    return wynik;
+}
 
 int main() {
     double num1, num2;
     char operacja;
-
     cout << "Podaj pierwsza liczbe: ";
     cin >> num1;
-    cout << "Podaj operacje (+, -, *, /): ";
+    cout << "Podaj operacje (+, -, *, /, ^): ";
     cin >> operacja;
     cout << "Podaj druga liczbe: ";
     cin >> num2;
@@ -48,6 +55,9 @@ int main() {
         break;
         case '/':
             wynik = dziel(num1, num2);
+        break;
+        case '^':
+            wynik = potega(num1, num2);
         break;
         default:
             cout << "Nieprawidłowa operacja!" << endl;
